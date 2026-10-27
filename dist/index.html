@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>raphih.at — Useful things. Playful thinking.</title>
+  <meta name="description" content="Raphael Huber’s digital playground. Music software, thoughtful tools for education, workshop automation, and games made with curiosity.">
+  <meta property="og:title" content="raphih.at — Useful things. Playful thinking.">
+  <meta property="og:description" content="Music software, thoughtful tools, and wonderfully unnecessary games. A selection of work by Raphael Huber.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/space-grotesk-bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to the work</a>
+  <header class="header wrap">
+    <a class="wordmark" href="#" aria-label="raphih.at home">raphih.at<span class="logo-star" aria-hidden="true">✳</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#work">The work <span>↘</span></a>
+      <a href="#about">The human</a>
+      <a href="#process">The process</a>
+    </nav>
+    <a class="contact-link" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-spark" aria-hidden="true">✳</span> RAPHAEL HUBER’S DIGITAL PLAYGROUND</p>
+        <h1 id="hero-title">Useful things.<br><span class="blue playful-word">Playful</span><br class="mobile-break"> thinking.</h1>
+        <p class="hero-intro">I turn “what if” into things you can use.<br>Music software, thoughtful tools, and a little mischief.</p>
+        <a class="round-link" href="#work"><span class="round-arrow" aria-hidden="true">↘</span> Explore my work</a>
+      </div>
+
+      <div class="playground" aria-label="An interactive idea machine">
+        <svg class="cable" viewBox="0 0 500 460" fill="none" aria-hidden="true"><path d="M55 355C-13 421 125 475 191 408C262 336 373 462 437 345C472 282 386 235 399 158" stroke="currentColor" stroke-width="4"/></svg>
+        <div class="idea-note"><span>A GOOD PLACE<br>TO START:</span><strong>what if?</strong><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M10 12C18 53 52 50 84 26M70 20L87 24L80 42"/></svg></div>
+        <div class="dial-machine">
+          <div class="dial-top"><span>THE CURIOSITY MACHINE</span><span>↗</span></div>
+          <div class="dial-housing">
+            <div class="dial-ticks" aria-hidden="true"></div>
+            <div class="dial-knob" aria-hidden="true"><i></i><span>✳</span></div>
+            <input id="curiosity" type="range" min="0" max="100" value="68" aria-label="Turn up the curiosity" aria-describedby="dial-hint">
+          </div>
+          <div class="dial-bottom"><span>LESS</span><span>MORE</span></div>
+          <div class="dial-footer"><span class="machine-light"></span> IDEAS IN. GOOD STUFF OUT.</div>
+        </div>
+        <div class="happy-block" aria-hidden="true"><span class="eye"></span><span class="eye"></span><i></i></div>
+        <span class="dial-hint" id="dial-hint">go on, turn it up <span aria-hidden="true">⤴</span></span>
+        <svg class="pointer-toy" viewBox="0 0 94 112" aria-hidden="true"><path d="M9 6L82 60L48 65L35 99Z" fill="#f28161" stroke="#24241f" stroke-width="3" stroke-linejoin="round"/><path d="M48 65L63 93L49 101L35 74" fill="#f28161" stroke="#24241f" stroke-width="3" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="hero-baseline"><span>INDEPENDENT MIND. MANY OPEN TABS.</span><span>SCROLL FOR THE GOOD STUFF <span aria-hidden="true">↓</span></span></div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>CODE WITH CHARACTER</span><i>✳</i><span>SOUND WITH FEELING</span><i>✳</i><span>TOOLS FOR REAL PEOPLE</span><i>✳</i><span>A HEALTHY DOSE OF PLAY</span><i>✳</i><span>CODE WITH CHARACTER</span><i>✳</i><span>SOUND WITH FEELING</span><i>✳</i><span>TOOLS FOR REAL PEOPLE</span><i>✳</i><span>A HEALTHY DOSE OF PLAY</span><i>✳</i></div></div>
+
+    <section id="work" class="work wrap section-space" aria-labelledby="work-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">Different worlds.<br>Same curious mind<span class="blue">.</span></h2></div><p>Some things make a little more sense. <br>Some things make a little more noise.</p></div>
+      <div class="filter-bar reveal" role="group" aria-label="Filter projects"><button type="button" class="filter active" data-filter="all" aria-pressed="true">All the things <span>05</span></button><button type="button" class="filter" data-filter="tools" aria-pressed="false">Useful tools</button><button type="button" class="filter" data-filter="sound" aria-pressed="false">Sound & music</button><button type="button" class="filter" data-filter="play" aria-pressed="false">Just for play</button><span class="filter-aside">BUILT WITH INTENTION. AND A FEW DETOURS.</span></div>
+      <p id="filter-status" class="sr-only" aria-live="polite"></p>
+
+      <div class="project-grid">
+        <article class="project project-bounce reveal" data-category="sound">
+          <div class="project-visual bounce-visual">
+            <div class="visual-topline"><span>RAHU / AUDIO INSTRUMENTS</span><span>01</span></div>
+            <span class="bounce-outline" aria-hidden="true">bounce.</span>
+            <img class="bounce-image" src="/assets/rahu-bounce.png" alt="Rahu Bounce synthesizer interface with envelope editor, seven sound controls, and a keyboard" width="1160" height="590" loading="lazy">
+            <button type="button" class="audio-preview" id="audio-preview" aria-pressed="false"><span class="play-icon" aria-hidden="true">▶</span><span class="audio-label">A little bass?</span><span class="audio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+          </div>
+          <div class="project-info"><div><p class="project-type">MUSIC SOFTWARE · C++ / JUCE</p><h3><button type="button" data-project="bounce">Rahu Bounce <span aria-hidden="true">↗</span></button></h3><p>A bass synth with a serious sense of bounce. Built for trance, bounce, and hardgroove.</p></div><button class="project-arrow" type="button" data-project="bounce" aria-label="Read the Rahu Bounce project story">↗</button></div>
+        </article>
+
+        <article class="project project-rosa reveal" data-category="tools">
+          <button class="project-visual rosa-visual" type="button" data-project="rosa" aria-label="Explore rosa, an education planning companion">
+            <span class="visual-topline"><span>LESS PLANNING FRICTION. MORE TEACHING.</span><span>02</span></span>
+            <span class="rosa-orbit" aria-hidden="true"></span><img class="rosa-logo" src="/assets/rosa.svg" alt="rosa" width="260" height="81" loading="lazy">
+            <span class="lesson-sheet sheet-back" aria-hidden="true"></span>
+            <span class="lesson-sheet" aria-hidden="true"><span class="sheet-kicker">DEINE NÄCHSTE GUTE STUNDE</span><strong>Was wäre,<br>wenn Lernen<br>neugierig macht?</strong><span class="sheet-line"></span><span class="sheet-line short"></span><span class="lesson-phase"><i>01</i> Ankommen & entdecken</span><span class="lesson-phase"><i>02</i> Gemeinsam ausprobieren</span><span class="sheet-foot">EINE STUNDE. VIELE MÖGLICHKEITEN. <b>✳</b></span></span>
+            <span class="rosa-label">Made for the classroom. <span>♡</span></span>
+          </button>
+          <div class="project-info"><div><p class="project-type">EDUCATION · AI & PRODUCT DEVELOPMENT</p><h3><button type="button" data-project="rosa">rosa <span aria-hidden="true">↗</span></button></h3><p>A thoughtful planning companion for teachers in Austria. The lesson comes first.</p></div><button class="project-arrow" type="button" data-project="rosa" aria-label="Read the rosa project story">↗</button></div>
+        </article>
+
+        <article class="project project-cordo reveal" data-category="tools">
+          <button class="project-visual cordo-visual" type="button" data-project="cordo" aria-label="Explore Cordo workshop coordination">
+            <span class="visual-topline"><span>LESS BACK-AND-FORTH. MORE TOGETHER.</span><span>03</span></span>
+            <span class="cordo-brand">cordo<span>↗</span></span>
+            <span class="cordo-flow" aria-hidden="true"><span class="flow-step"><i>↗</i> Anfrage</span><span class="flow-dot"></span><span class="flow-step"><i>☺</i> Team</span><span class="flow-dot"></span><span class="flow-step"><i>✓</i> Workshop</span></span>
+            <span class="cordo-schedule" aria-hidden="true"><span class="schedule-top">Alles an seinem Platz.<i>● ● ●</i></span><span class="schedule-row"><span class="schedule-date">DI <b>14</b></span><span><strong>Ein Workshop. Ein gutes Team.</strong><small>Schule · Trainer:innen · Koordination</small></span><span class="schedule-check">✓</span></span><span class="schedule-bottom"><i>✓ Team steht</i><i>✓ Bestätigung versendet</i></span></span>
+          </button>
+          <div class="project-info"><div><p class="project-type">COORDINATION · FULL-STACK PRODUCT</p><h3><button type="button" data-project="cordo">Cordo <span aria-hidden="true">↗</span></button></h3><p>From school enquiry to workshop report. A shared home for the people who make it happen.</p></div><button class="project-arrow" type="button" data-project="cordo" aria-label="Read the Cordo project story">↗</button></div>
+        </article>
+
+        <article class="project project-buntaz reveal" data-category="tools">
+          <button class="project-visual buntaz-visual" type="button" data-project="buntaz" aria-label="Explore buntaž spreadsheet automation">
+            <span class="visual-topline"><span>MAKE THE REPETITIVE PART DISAPPEAR.</span><span>04</span></span>
+            <span class="buntaz-word">buntaž<span>✳</span></span>
+            <span class="spreadsheet" aria-hidden="true"><span class="sheet-toolbar"><i></i><b>Workshopkoordination</b><span>↗</span></span><span class="table-grid"><span></span><span>A</span><span>B</span><span>C</span><span>1</span><strong>Workshop</strong><strong>Team</strong><strong>Status</strong><span>2</span><span>Berufsorientierung</span><span>✓</span><em>Bestätigt</em><span>3</span><span>Gemeinsam stark</span><span>✓</span><em>Bestätigt</em><span>4</span><span>Neue Perspektiven</span><span>✓</span><em>Bestätigt</em><span>5</span><span></span><span></span><span></span></span></span>
+            <span class="automation-badge"><span>✓</span> That part? Already done.</span>
+          </button>
+          <div class="project-info"><div><p class="project-type">AUTOMATION · GOOGLE APPS SCRIPT</p><h3><button type="button" data-project="buntaz">buntaž automation <span aria-hidden="true">↗</span></button></h3><p>A spreadsheet that pulls its weight. Bookings, team assignments, emails, and calendars connected.</p></div><button class="project-arrow" type="button" data-project="buntaz" aria-label="Read the buntaž automation project story">↗</button></div>
+        </article>
+
+        <article class="project project-game reveal" data-category="play">
+          <div class="game-preview"><div class="game-copy"><p class="eyebrow">05 / A LITTLE SIDE QUEST</p><h3>Hochstapler<span>_</span></h3><p>Even thoughtful software needs a silly little secret. A stacking game hiding inside rosa.</p><button class="game-launch" type="button" id="game-launch">Just one more block <span aria-hidden="true">↗</span></button><button class="game-story" type="button" data-project="hochstapler">The story behind the game ↗</button></div><div class="stack-art" aria-hidden="true"><span class="stack-score">HEIGHT <b>07 M</b></span><span class="stack-cross">+</span><i style="--w:66%;--x:5%;--c:#9cafa1;--r:-3deg"></i><i style="--w:62%;--x:2%;--c:#b3c3a5;--r:2deg"></i><i style="--w:54%;--x:4%;--c:#c2c9a4;--r:-2deg"></i><i style="--w:50%;--x:1%;--c:#e9c083;--r:1deg"></i><i style="--w:44%;--x:4%;--c:#d5a66c;--r:-2deg"></i><i style="--w:36%;--x:1%;--c:#8da6ba;--r:2deg"></i><i style="--w:32%;--x:16%;--c:#a6bac9;--r:-3deg"></i><span class="stack-ground"></span><span class="stack-caption">SPACE TO STACK. COURAGE TO CONTINUE.</span></div></div>
+        </article>
+      </div>
+
+      <div class="lab reveal"><div><p class="eyebrow">STILL CURIOUS?</p><h3>There’s more in the drawer.</h3></div><div class="lab-links"><button type="button" data-project="headturner"><span>Headturner Hat<small>A noise-first techno hi-hat instrument</small></span><span aria-hidden="true">↗</span></button><button type="button" data-project="nomads"><span>Valley Nomads<small>Multiplayer board game in the browser</small></span><span aria-hidden="true">↗</span></button></div></div>
+    </section>
+
+    <section id="about" class="about wrap section-space" aria-labelledby="about-title"><div class="about-heading reveal"><p class="eyebrow">02 / THE HUMAN BEHIND THE TABS</p><h2 id="about-title">Hi, I’m Raphael.<br>I like connecting<br><span class="blue">unlikely dots.</span></h2><div class="about-doodle" aria-hidden="true"><span>☺</span><i>Curiosity is<br>the common thread.</i><svg viewBox="0 0 100 70"><path d="M75 10C95 55 45 65 15 28M13 45L12 24L33 24"/></svg></div></div><div class="about-copy reveal"><p class="large-copy">A bassline. A better school day.<br>A spreadsheet that finally behaves.</p><p>They might look like different worlds. To me, they start with the same question: could this feel better?</p><p>I build at the intersection of code, sound, and education. Sometimes that means going deep into a synthesizer’s signal path. Sometimes it means making a complicated workflow feel simple. And sometimes, it means hiding a game where you least expect it.</p><p>I care about what happens on the other side of the screen. The sound you hear. The time you get back. The little moment that makes you smile.</p><a class="text-link" href="https://github.com/rapfl" target="_blank" rel="noopener noreferrer">A peek inside my GitHub <span aria-hidden="true">↗</span></a></div></section>
+
+    <section id="process" class="process section-space" aria-labelledby="process-title"><div class="wrap process-layout"><div class="process-title reveal"><p class="eyebrow">03 / HOW THE THINGS BECOME THINGS</p><h2 id="process-title">Follow the<br>question.<br><span>Make it real.</span></h2><span class="process-spark" aria-hidden="true">✳</span></div><div class="process-steps"><div class="process-step reveal"><span>01</span><div><h3>Get close to the real thing.</h3><p>Start with the classroom, the workflow, or the sound. Understand the problem before deciding what to build.</p></div></div><div class="process-step reveal"><span>02</span><div><h3>Make something you can try.</h3><p>Turn the idea into a working version. Use code, AI tools, and small experiments to shorten the distance from question to answer.</p></div></div><div class="process-step reveal"><span>03</span><div><h3>Listen. Test. Turn the dial.</h3><p>Play the synth. Follow the booking through. Check the lesson. Keep refining the parts that matter to the person using it.</p></div></div><p class="process-footnote reveal">A little rigour. A little intuition. Room for a happy accident.</p></div></div></section>
+
+    <section id="contact" class="contact wrap section-space" aria-labelledby="contact-title"><div class="contact-top reveal"><p class="eyebrow">04 / YOUR TURN</p><span>GOOD THINGS START WITH A CONVERSATION.</span></div><div class="contact-main reveal"><h2 id="contact-title">Got a <span class="blue">“what if”?</span></h2><a href="mailto:huber.raphael@icloud.com" class="contact-cta" aria-label="Email Raphael Huber"><span aria-hidden="true">↗</span></a></div><div class="contact-bottom reveal"><p>A useful tool, a strange idea, a sound that doesn’t exist yet. <br>I’d like to hear about it.</p><a class="text-link" href="mailto:huber.raphael@icloud.com">huber.raphael@icloud.com ↗</a></div></section>
+  </main>
+
+  <footer class="footer wrap"><a class="wordmark" href="#">raphih.at<span class="logo-star" aria-hidden="true">✳</span></a><span>MADE WITH CURIOSITY. BY RAPHAEL HUBER.</span><div><a href="https://github.com/rapfl" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" id="motion-toggle" aria-pressed="false">Pause motion</button><a href="#">Back to top ↑</a></div></footer>
+
+  <audio id="bounce-audio" src="/assets/rahu-bounce-demo.mp3" preload="none"></audio>
+  <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" aria-label="Close project">×</button><div id="project-dialog-content"></div></dialog>
+  <dialog id="game-dialog" class="game-dialog" aria-labelledby="game-title"><div class="game-dialog-head"><div><p class="eyebrow">A SMALL PORTFOLIO EDITION</p><h2 id="game-title">Hochstapler</h2></div><button type="button" class="dialog-close" aria-label="Close game">×</button></div><div class="game-stats"><span>HEIGHT <b id="game-height">0 m</b></span><span>SCORE <b id="game-score">0</b></span><span>BEST <b id="game-best">0</b></span></div><canvas id="stack-canvas" width="560" height="420" aria-label="Stacking game. Press the Stack block button or Space to place the moving block."></canvas><p id="game-status" aria-live="polite">Line it up. Find your rhythm.</p><button type="button" id="stack-button" class="game-launch">Start stacking <span aria-hidden="true">↗</span></button><p class="game-instruction">CLICK, TAP, OR SPACE TO STACK · ESC TO LEAVE</p></dialog>
+</body>
+</html>

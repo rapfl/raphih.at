@@ -1,0 +1,14 @@
+import { readFile, access } from 'node:fs/promises';
+import { resolve } from 'node:path';
+const html = await readFile('dist/index.html', 'utf8');
+const css = await readFile('dist/styles.css', 'utf8');
+const js = await readFile('dist/app.js', 'utf8');
+const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+if (new Set(ids).size !== ids.length) throw new Error('Duplicate HTML IDs');
+for (const [, hash] of html.matchAll(/href="#([^"]+)"/g)) if (!ids.includes(hash)) throw new Error(`Missing anchor: ${hash}`);
+const refs = new Set([...`${html}\n${css}\n${js}`.matchAll(/(?:src=|href=|url\()?["'](\/(?:assets\/[^"')]+|app\.js|styles\.css))["']/g)].map(match => match[1]));
+for (const path of refs) await access(resolve('dist', '.' + path));
+const projectIds = [...html.matchAll(/data-project="([^"]+)"/g)].map(match => match[1]);
+for (const id of projectIds) if (!js.includes(`  ${id}: {`)) throw new Error(`Missing project story: ${id}`);
+if (!html.includes('prefers-reduced-motion') && !css.includes('prefers-reduced-motion')) throw new Error('Reduced motion support missing');
+console.log(`Checked ${ids.length} unique IDs, ${refs.size} local assets, all anchors and ${new Set(projectIds).size} project stories.`);
