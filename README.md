@@ -22,4 +22,6 @@ Open http://localhost:4173. Deploy `dist/` on any static host. The Netlify confi
 
 Product previews for rosa, Cordo, and buntaž are illustrative compositions with synthetic data. Rahu Bounce uses the real interface and a locally rendered audio sample. The page makes no external network requests or analytics calls. Email and external project links only navigate after activation. The stacking game optionally saves its best score in localStorage.
 
-Hosting target: Netlify project `raphih-at` in team `raphael-6625tly`. Public publication at raphih.at requires adding the domain to Netlify and configuring its DNS at NameSilo. The separate Sites preview remains private.
+Hosting target: Netlify project `raphih-portfolio` in team `huber-raphael`. Public publication at raphih.at requires adding the domain to Netlify and configuring its DNS at NameSilo. The separate Sites preview remains private.
+
+Continuous deployment is connected to the `main` branch of https://github.com/rapfl/raphih.at. Every push runs `npm run check` and publishes `dist/`.

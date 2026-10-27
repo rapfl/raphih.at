@@ -4,4 +4,4 @@ output/
 .DS_Store
 .env*
 *.tar.gz
-.openai/*.local.*
+.openai/
