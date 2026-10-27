@@ -125,7 +125,7 @@ const stories = {
     problem: 'Not every interaction has to make you more productive. Sometimes a little discovery is enough.',
     approach: 'In rosa, type “stapel”, enter the Konami code, or tap the rosa mark five times on a phone. A lazily loaded stacking game appears. Place the moving layer on the one below it: the overhang falls away, the tower gets narrower, and the next layer moves faster.',
     detail: 'The game uses rosa’s sage, amber, blue, and graphite palette. Calendar weeks tick forward from the start of the school year. A precise placement earns a bonus; high scores unlock little notes from the staffroom. The best five scores stay in that browser.',
-    status: 'Hidden in rosa · The version here is a smaller, standalone portfolio adaptation of the stacking mechanic.',
+    status: 'Hidden in rosa · Play the standalone portfolio adaptation directly on this page.',
     game: true,
   },
   headturner: {
@@ -148,19 +148,20 @@ const stories = {
 };
 
 const projectDialog = $('#project-dialog');
-const gameDialog = $('#game-dialog');
+const gamePanel = $('#hochstapler');
 function openStory(id) {
   const story = stories[id];
   if (!story) return;
   const body = $('#project-dialog-content');
   body.innerHTML = `<div class="story-header" style="--story-color:${story.color}"><p class="eyebrow">${story.type}</p><h2 id="dialog-title">${story.title}</h2><p>${story.intro}</p></div><div class="story-body">${story.image ? `<img class="story-image" src="${story.image}" alt="${story.imageAlt}">` : ''}<h3>The starting question</h3><p>${story.problem}</p><h3>What I built</h3><p>${story.approach}</p><h3>Under the surface</h3><p>${story.detail}</p>${story.url ? `<a class="story-link" href="${story.url}" target="_blank" rel="noopener noreferrer">${story.link}<span aria-hidden="true">↗</span></a>` : ''}${story.game ? '<button type="button" class="story-link" id="story-play">Play the portfolio edition <span aria-hidden="true">↗</span></button>' : ''}${story.note ? `<p class="story-note">${story.note}</p>` : ''}<p class="story-status">${story.status}</p></div>`;
+  pauseGame();
   projectDialog.showModal();
   projectDialog.scrollTop = 0;
   document.body.classList.add('modal-open');
   $('#story-play')?.addEventListener('click', () => { projectDialog.close(); launchGame(); });
 }
 $$('[data-project]').forEach(button => button.addEventListener('click', () => openStory(button.dataset.project)));
-for (const dialog of [projectDialog, gameDialog]) {
+for (const dialog of [projectDialog]) {
   $('.dialog-close', dialog).addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
@@ -168,7 +169,7 @@ for (const dialog of [projectDialog, gameDialog]) {
     if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
-    if (!projectDialog.open && !gameDialog.open) document.body.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
   });
 }
 
@@ -180,6 +181,7 @@ const palette = ['#9cafa1', '#b3c3a5', '#c2c9a4', '#e9c083', '#d5a66c', '#8da6ba
 let game = null;
 let frameId = null;
 let previousTime = 0;
+let manualTime = false;
 let best = 0;
 try { best = Math.max(0, Number(localStorage.getItem('raphih-stack-best')) || 0); } catch { /* Storage is optional. */ }
 
@@ -191,27 +193,59 @@ function updateGameStats() {
 function resetGame() {
   game = { mode: 'ready', height: 0, score: 0, direction: 1, speed: 128, moving: { x: 30, w: 220 }, layers: [{ x: 170, w: 220 }], pieces: [] };
   previousTime = 0;
-  gameButton.innerHTML = 'Start stacking <span aria-hidden="true">↗</span>';
+  gameButton.innerHTML = 'Play now <span aria-hidden="true">↗</span>';
+  $('#game-pause').disabled = true;
+  $('#game-pause').textContent = 'Pause';
   $('#game-status').textContent = 'Line it up. Find your rhythm.';
   updateGameStats();
   drawGame();
 }
 function launchGame() {
   audio.pause();
-  gameDialog.showModal();
-  document.body.classList.add('modal-open');
-  resetGame();
-  gameButton.focus();
+  if ($('.project-game').hidden) $('[data-filter="all"]').click();
+  gamePanel.scrollIntoView({ behavior: motionPaused ? 'instant' : 'smooth', block: 'center' });
+  canvas.focus({ preventScroll: true });
+  if (game.mode === 'paused') resumeGame();
+  else if (game.mode !== 'playing') startGame();
+}
+function scheduleGame() {
+  if (!manualTime && frameId === null && game.mode === 'playing') frameId = requestAnimationFrame(tick);
 }
 function startGame() {
+  if (frameId !== null) cancelAnimationFrame(frameId);
+  frameId = null;
   resetGame();
   game.mode = 'playing';
   gameButton.innerHTML = 'Stack block <span aria-hidden="true">↓</span>';
+  $('#game-pause').disabled = false;
   $('#game-status').textContent = 'Click, tap, or press Space when the blocks line up.';
-  if (frameId === null) frameId = requestAnimationFrame(tick);
+  drawGame();
+  scheduleGame();
+}
+function pauseGame() {
+  if (!game || game.mode !== 'playing') return;
+  game.mode = 'paused';
+  if (frameId !== null) cancelAnimationFrame(frameId);
+  frameId = null;
+  previousTime = 0;
+  $('#game-pause').textContent = 'Resume';
+  gameButton.innerHTML = 'Resume game <span aria-hidden="true">↗</span>';
+  $('#game-status').textContent = 'Take a breath. Your tower is waiting.';
+  drawGame();
+}
+function resumeGame() {
+  if (game.mode !== 'paused') return;
+  game.mode = 'playing';
+  previousTime = 0;
+  $('#game-pause').textContent = 'Pause';
+  gameButton.innerHTML = 'Stack block <span aria-hidden="true">↓</span>';
+  $('#game-status').textContent = 'Find your rhythm. Space, click, or tap to stack.';
+  drawGame();
+  scheduleGame();
 }
 function endGame() {
   game.mode = 'over';
+  $('#game-pause').disabled = true;
   if (game.score > best) {
     best = game.score;
     try { localStorage.setItem('raphih-stack-best', String(best)); } catch { /* No persistence required. */ }
@@ -219,9 +253,11 @@ function endGame() {
   } else $('#game-status').textContent = `${game.height} metres of ambition. One more go?`;
   gameButton.innerHTML = 'Try again <span aria-hidden="true">↗</span>';
   updateGameStats();
+  drawGame();
 }
 function stackBlock() {
-  if (!game || game.mode !== 'playing') { startGame(); return; }
+  if (game.mode === 'paused') { resumeGame(); return; }
+  if (game.mode !== 'playing') { startGame(); return; }
   const previous = game.layers[game.layers.length - 1];
   const current = game.moving;
   const perfect = Math.abs(current.x - previous.x) < 7;
@@ -241,6 +277,7 @@ function stackBlock() {
   game.moving = { x: game.direction > 0 ? 25 : 535 - (right - left), w: right - left };
   $('#game-status').textContent = perfect ? 'Perfect placement. +35. Nicely done.' : '+10. A little narrower. A little braver.';
   updateGameStats();
+  drawGame();
 }
 function drawGame() {
   if (!ctx || !game) return;
@@ -272,40 +309,63 @@ function drawGame() {
     ctx.fillRect(piece.x, ground - (piece.level + 1) * step + offset + piece.y, piece.w, step - 2);
   }
   ctx.globalAlpha = 1;
-  if (game.mode === 'ready' || game.mode === 'over') {
+  if (game.mode === 'ready' || game.mode === 'over' || game.mode === 'paused') {
     ctx.fillStyle = '#20221cb0';ctx.fillRect(0, 0, W, H);
     ctx.textAlign = 'center';ctx.fillStyle = '#d5e5a3';ctx.font = 'bold 31px Space, sans-serif';
-    ctx.fillText(game.mode === 'ready' ? 'A little higher?' : 'A beautiful attempt.', W / 2, 133);
+    ctx.fillText(game.mode === 'ready' ? 'A little higher?' : game.mode === 'paused' ? 'No rush.' : 'A beautiful attempt.', W / 2, 133);
     ctx.fillStyle = '#c2cab1';ctx.font = '14px DM, sans-serif';
     ctx.fillText(game.mode === 'ready' ? 'Keep the overlap. Let the rest go.' : `${game.height} m · ${game.score} points`, W / 2, 166);
   }
 }
+function updateGame(dt) {
+  if (game.mode !== 'playing') return;
+  game.moving.x += game.direction * game.speed * dt;
+  if (game.moving.x + game.moving.w >= canvas.width - 25) { game.moving.x = canvas.width - 25 - game.moving.w; game.direction = -1; }
+  if (game.moving.x <= 25) { game.moving.x = 25; game.direction = 1; }
+  for (const piece of game.pieces) { piece.v += 800 * dt; piece.y += piece.v * dt; }
+  game.pieces = game.pieces.filter(piece => piece.y < 260);
+}
 function tick(time) {
   frameId = null;
-  if (!gameDialog.open) return;
+  if (game.mode !== 'playing' || document.hidden) return;
   const dt = Math.min((time - (previousTime || time)) / 1000, 0.04);
   previousTime = time;
-  if (game.mode === 'playing' && !document.hidden) {
-    game.moving.x += game.direction * game.speed * dt;
-    if (game.moving.x + game.moving.w >= canvas.width - 25) { game.moving.x = canvas.width - 25 - game.moving.w; game.direction = -1; }
-    if (game.moving.x <= 25) { game.moving.x = 25; game.direction = 1; }
-  }
-  for (const piece of game.pieces) { piece.v += 800 * dt;piece.y += piece.v * dt; }
-  game.pieces = game.pieces.filter(piece => piece.y < 260);
+  updateGame(dt);
   drawGame();
-  if (game.mode === 'playing' || game.pieces.length) frameId = requestAnimationFrame(tick);
+  scheduleGame();
 }
 $('#game-launch').addEventListener('click', launchGame);
-gameButton.addEventListener('click', stackBlock);
-canvas.addEventListener('click', stackBlock);
-gameDialog.addEventListener('keydown', event => {
-  if (event.code === 'Space' && event.target.tagName !== 'BUTTON') {
-    event.preventDefault();
-    if (!event.repeat) stackBlock();
-  }
+gameButton.addEventListener('click', () => { audio.pause(); stackBlock(); });
+canvas.addEventListener('click', () => { audio.pause(); stackBlock(); });
+$('#game-pause').addEventListener('click', () => game.mode === 'paused' ? resumeGame() : pauseGame());
+$('#game-restart').addEventListener('click', startGame);
+gamePanel.addEventListener('keydown', event => {
+  if (event.repeat) { if (event.code === 'Space') event.preventDefault(); return; }
+  if (event.code === 'KeyP') { event.preventDefault(); game.mode === 'paused' ? resumeGame() : pauseGame(); }
+  if (event.code === 'KeyR') { event.preventDefault(); startGame(); }
+  if ((event.code === 'Space' || event.code === 'Enter') && event.target === canvas) { event.preventDefault(); stackBlock(); }
 });
-gameDialog.addEventListener('close', () => {
+document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame(); });
+if ('IntersectionObserver' in window) {
+  const gameObserver = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) pauseGame();
+  }, { threshold: 0.1 });
+  gameObserver.observe(gamePanel);
+}
+window.render_game_to_text = () => JSON.stringify({
+  coordinates: 'Canvas 560 by 420; origin top left; x increases right; tower grows upward.',
+  mode: game.mode, height: game.height, score: game.score, best,
+  moving: { ...game.moving, direction: game.direction, speed: game.speed },
+  support: game.layers[game.layers.length - 1],
+  layers: game.layers.slice(-11),
+});
+window.advanceTime = ms => {
+  manualTime = true;
   if (frameId !== null) cancelAnimationFrame(frameId);
   frameId = null;
-  previousTime = 0;
-});
+  const steps = Math.max(1, Math.ceil(ms / (1000 / 60)));
+  for (let i = 0; i < steps; i++) updateGame(ms / steps / 1000);
+  drawGame();
+};
+resetGame();
+document.fonts.ready.then(drawGame);

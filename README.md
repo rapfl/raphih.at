@@ -1,6 +1,6 @@
 # raphih.at
 
-Raphael Huber’s portfolio. A buildless static site with local fonts, real Rahu Bounce imagery and audio, project stories, filters, motion controls, and a small Hochstapler adaptation.
+Raphael Huber’s portfolio. A buildless static site with local fonts, real Rahu Bounce imagery and audio, project stories, filters, motion controls, and an inline playable Hochstapler adaptation, and personal AI guidance and custom software services for social initiatives.
 
 ## Run
 
