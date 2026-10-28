@@ -31,3 +31,15 @@ Confirmed offer: hands-on implementation of AI or AI-driven software, custom bui
 Homepage purpose: make the engagement clear and invite a useful first conversation. Visual direction: restrained typography, warm paper, cobalt emphasis, and generous spacing; no character illustration. Promise: “Let’s put it to work.” Content: three practical offers → “Listen closely. Try together. Keep learning.” → a few linked examples → personal involvement → contact. No invented packages, prices, turnaround times, or client results.
 
 Portfolio: preserved all five projects, the two experiments, audio, case studies, and playable game at `/portfolio/`. Portfolio links to the homepage; homepage links to project anchors. Legacy homepage project/game hashes forward to the portfolio. Separate scripts prevent portfolio-only controls from running on the landing page. Both pages remain buildless, keyboard accessible, and responsive, with reduced-motion support.
+
+## Quiet editorial UI pass — 28 October 2026
+
+Purpose: make the offering and the work easier to read, with personality in phrasing and small interactions. Refined the established paper/ink/cobalt direction rather than adding imagery or ornament.
+
+Hierarchy: one prominent, regular-weight hero; smaller, distinct section headings; sentence-case labels at readable sizes. Removed serial chapter numbers, repeated promise lines, pill-style filters, the portfolio ticker, and oversized circular contact buttons.
+
+Composition: a narrower shared grid, services as readable rows, project evidence before the process, and a muted process section. The portfolio reaches the projects sooner and sends service enquiries back to the homepage.
+
+Copy: shorter first-person phrasing, concrete service names and examples, a personal introduction in the hero, and direct email contact. Kept “Listen closely. Try together. Keep learning.” and the playful project/game interactions.
+
+Verified both pages at desktop, 390px, and 320px; route forwarding, filters, case studies, game start/pause, and motion controls. Inspected screenshots and fixed mobile line-break spacing.

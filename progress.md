@@ -16,3 +16,8 @@ Verified desktop, 390px and 320px layouts, section/project order, curiosity cont
 User confirmed hands-on AI implementation, custom builds, and support as the main offer; small organisations and institutions as the audience. Strategy, team management, and facilitation complement the work.
 Implemented dedicated `/portfolio/` with all projects, case studies, audio, and playable Hochstapler. New homepage explains the offer, shared working approach, example projects, personal involvement, and contact. Added independent landing scripts, canonical metadata, directory routing in local preview, cross-page checks, and legacy project-hash forwarding.
 Verified: both routes, navigation in both directions, all five projects, filters, project modal, game start/pause, old game link forwarding, desktop/390px/320px layouts, motion control, and no browser errors. Inspected screenshots; fixed responsive line-break spacing.
+
+## Quiet editorial UI pass
+User request: improve hierarchy, spacing, and copy; stand out quietly with fewer AI patterns and some playfulness.
+Implemented a more personal, regular-weight typographic hero; readable sentence-case labels; concrete service rows; project evidence before a quieter process section; shorter first-person copy and direct email contact. Simplified portfolio intro, filters, captions, and enquiry section; removed ticker and duplicate homepage sections. All projects and game remain.
+Verified both pages at desktop/390px/320px, navigation, redirects, filters, project modal, game start/pause, motion control, and no browser errors. Screenshots inspected.
