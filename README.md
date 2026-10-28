@@ -32,3 +32,7 @@ Product previews for rosa, Cordo, and buntaž are illustrative compositions with
 ## Deployment
 
 Netlify project `raphih-portfolio`, team `huber-raphael`, deploys `main` from https://github.com/rapfl/raphih.at. Each push runs `npm run check` and publishes `dist/`. The local `.netlify/` binding is ignored by Git. The canonical domain is https://raphih.at/.
+
+## Languages
+
+German is the default at `/` and `/portfolio/`. English lives at `/en/` and `/en/portfolio/`. The header switch preserves section anchors; internal page links stay in the selected language. Static copy and metadata live in the four HTML pages. Shared interactive portfolio strings use `dist/translations-de.js`; English strings remain in `dist/app.js`.

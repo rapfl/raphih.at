@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node --check dist/app.js && node --check dist/landing.js && node scripts/check.mjs"
+    "check": "node --check dist/app.js && node --check dist/landing.js && node --check dist/language.js && node --check dist/translations-de.js && node scripts/check.mjs"
   },
   "engines": {
     "node": ">=20"

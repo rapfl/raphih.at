@@ -1,104 +1,109 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f2e9">
   <title>Portfolio — Raphael Huber · raphih.at</title>
-  <meta name="description" content="Selected work by Raphael Huber: education tools, workshop coordination, automation, music software, and a playable stacking game.">
+  <meta name="description" content="Ausgewählte Arbeiten von Raphael Huber: Bildungstools, Workshopkoordination, Automatisierung, Musiksoftware und ein spielbarer Hochstapler.">
   <meta property="og:title" content="Portfolio — Raphael Huber · raphih.at">
-  <meta property="og:description" content="Explore the projects: rosa, Cordo, buntaž automation, Rahu Bounce, and Hochstapler.">
+  <meta property="og:description" content="Projekte entdecken: rosa, Cordo, buntaž Automatisierung, Rahu Bounce und Hochstapler.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://raphih.at/portfolio/">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/space-grotesk-bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/translations-de.js" defer></script>
   <script src="/app.js" defer></script>
+<link rel="alternate" hreflang="de" href="https://raphih.at/portfolio/">
+  <link rel="alternate" hreflang="en" href="https://raphih.at/en/portfolio/">
+  <link rel="alternate" hreflang="x-default" href="https://raphih.at/portfolio/">
+  <script src="/language.js" defer></script>
 </head>
 <body class="portfolio-page">
-  <a class="skip-link" href="#work">Skip to the work</a>
+  <a class="skip-link" href="#work">Direkt zu den Projekten</a>
   <header class="header wrap">
-    <a class="wordmark" href="/" aria-label="raphih.at home">raphih.at<span class="logo-star" aria-hidden="true">✳</span></a>
-    <nav aria-label="Main navigation"><a href="/">Working together <span>↗</span></a><a href="#work" aria-current="page">Portfolio</a><a href="/#about">Meet Raphael</a></nav>
-    <a class="contact-link" href="/#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    <a class="wordmark" href="/" aria-label="raphih.at Startseite">raphih.at<span class="logo-star" aria-hidden="true">✳</span></a>
+    <nav aria-label="Hauptnavigation"><a href="/">Zusammenarbeiten <span>↗</span></a><a href="#work" aria-current="page">Portfolio</a><a href="/#about">Über Raphael</a></nav>
+    <div class="header-actions"><div class="language-switch" role="group" aria-label="Sprache wählen"><a href="/portfolio/" lang="de" aria-label="Deutsch" aria-current="true">DE</a><span aria-hidden="true">/</span><a href="/en/portfolio/" lang="en" aria-label="English">EN</a></div><a class="contact-link" href="/#contact">Kontakt <span aria-hidden="true">↗</span></a></div>
   </header>
 
   <main>
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="tiny-spark" aria-hidden="true">✳</span> Portfolio / Raphael Huber</p>
-        <h1 id="hero-title">A few things<br><span class="blue playful-word">I’ve built.</span></h1>
-        <p class="hero-intro">Some started with a practical problem.<br>Others started with curiosity.</p>
-        <a class="round-link" href="#work"><span class="round-arrow" aria-hidden="true">↘</span> Explore the projects</a>
+        <h1 id="hero-title">Ein paar Dinge,<br><span class="blue playful-word">die ich baue.</span></h1>
+        <p class="hero-intro">Manche beginnen mit einem konkreten Problem.<br>Andere mit Neugier.</p>
+        <a class="round-link" href="#work"><span class="round-arrow" aria-hidden="true">↘</span> Projekte entdecken</a>
       </div>
 
-      <aside class="hero-invitation" aria-label="About the work"><p class="invitation-title">Education, coordination, music, and a small game.</p><a class="text-link" href="/">What I can help with <span aria-hidden="true">↗</span></a></aside>
+      <aside class="hero-invitation" aria-label="Über die Projekte"><p class="invitation-title">Bildung, Koordination, Musik und ein kleines Spiel.</p><a class="text-link" href="/">Wobei ich helfen kann <span aria-hidden="true">↗</span></a></aside>
     </section>
 
     <section id="work" class="work wrap section-space" aria-labelledby="work-title">
-      <div class="section-heading reveal"><div><h2 id="work-title">Selected projects</h2></div><p>What it does, why I built it, and what’s under the surface.</p></div>
-      <div class="filter-bar reveal" role="group" aria-label="Filter projects"><button type="button" class="filter active" data-filter="all" aria-pressed="true">All projects <span>05</span></button><button type="button" class="filter" data-filter="tools" aria-pressed="false">Everyday support</button><button type="button" class="filter" data-filter="sound" aria-pressed="false">Music & creativity</button><button type="button" class="filter" data-filter="play" aria-pressed="false">Just for play</button></div>
+      <div class="section-heading reveal"><div><h2 id="work-title">Ausgewählte Projekte</h2></div><p>Was es kann, warum ich es gebaut habe und was dahintersteckt.</p></div>
+      <div class="filter-bar reveal" role="group" aria-label="Projekte filtern"><button type="button" class="filter active" data-filter="all" aria-pressed="true">Alle Projekte <span>05</span></button><button type="button" class="filter" data-filter="tools" aria-pressed="false">Helfer im Alltag</button><button type="button" class="filter" data-filter="sound" aria-pressed="false">Musik & Kreativität</button><button type="button" class="filter" data-filter="play" aria-pressed="false">Zum Spielen</button></div>
       <p id="filter-status" class="sr-only" aria-live="polite"></p>
 
       <div class="project-grid">
 
         <article id="rosa" class="project project-rosa reveal" data-category="tools">
-          <button class="project-visual rosa-visual" type="button" data-project="rosa" aria-label="Explore rosa, an education planning companion">
-            <span class="visual-topline"><span>LESS PLANNING FRICTION. MORE TEACHING.</span><span>01</span></span>
+          <button class="project-visual rosa-visual" type="button" data-project="rosa" aria-label="rosa entdecken: Unterstützung bei der Unterrichtsplanung">
+            <span class="visual-topline"><span>WENIGER PLANUNGSAUFWAND. MEHR UNTERRICHT.</span><span>01</span></span>
             <span class="rosa-orbit" aria-hidden="true"></span><img class="rosa-logo" src="/assets/rosa.svg" alt="rosa" width="260" height="81" loading="lazy">
             <span class="lesson-sheet sheet-back" aria-hidden="true"></span>
             <span class="lesson-sheet" aria-hidden="true"><span class="sheet-kicker">DEINE NÄCHSTE GUTE STUNDE</span><strong>Was wäre,<br>wenn Lernen<br>neugierig macht?</strong><span class="sheet-line"></span><span class="sheet-line short"></span><span class="lesson-phase"><i>01</i> Ankommen & entdecken</span><span class="lesson-phase"><i>02</i> Gemeinsam ausprobieren</span><span class="sheet-foot">EINE STUNDE. VIELE MÖGLICHKEITEN. <b>✳</b></span></span>
-            <span class="rosa-label">Made for the classroom. <span>♡</span></span>
+            <span class="rosa-label">Für den Unterricht gemacht. <span>♡</span></span>
           </button>
-          <div class="project-info"><div><p class="project-type">For teachers</p><h3><button type="button" data-project="rosa">rosa <span aria-hidden="true">↗</span></button></h3><p>Helping teachers in Austria prepare a lesson with their class in mind.</p></div><button class="project-arrow" type="button" data-project="rosa" aria-label="Read the rosa project story">↗</button></div>
+          <div class="project-info"><div><p class="project-type">Für Lehrkräfte</p><h3><button type="button" data-project="rosa">rosa <span aria-hidden="true">↗</span></button></h3><p>Hilft Lehrkräften in Österreich, Unterricht mit Blick auf ihre Klasse vorzubereiten.</p></div><button class="project-arrow" type="button" data-project="rosa" aria-label="Mehr über rosa erfahren">↗</button></div>
         </article>
 
         <article id="cordo" class="project project-cordo reveal" data-category="tools">
-          <button class="project-visual cordo-visual" type="button" data-project="cordo" aria-label="Explore Cordo workshop coordination">
-            <span class="visual-topline"><span>LESS BACK-AND-FORTH. MORE TOGETHER.</span><span>02</span></span>
+          <button class="project-visual cordo-visual" type="button" data-project="cordo" aria-label="Cordo Workshopkoordination entdecken">
+            <span class="visual-topline"><span>WENIGER HIN UND HER. MEHR MITEINANDER.</span><span>02</span></span>
             <span class="cordo-brand">cordo<span>↗</span></span>
             <span class="cordo-flow" aria-hidden="true"><span class="flow-step"><i>↗</i> Anfrage</span><span class="flow-dot"></span><span class="flow-step"><i>☺</i> Team</span><span class="flow-dot"></span><span class="flow-step"><i>✓</i> Workshop</span></span>
             <span class="cordo-schedule" aria-hidden="true"><span class="schedule-top">Alles an seinem Platz.<i>● ● ●</i></span><span class="schedule-row"><span class="schedule-date">DI <b>14</b></span><span><strong>Ein Workshop. Ein gutes Team.</strong><small>Schule · Trainer:innen · Koordination</small></span><span class="schedule-check">✓</span></span><span class="schedule-bottom"><i>✓ Team steht</i><i>✓ Bestätigung versendet</i></span></span>
           </button>
-          <div class="project-info"><div><p class="project-type">For workshop teams</p><h3><button type="button" data-project="cordo">Cordo <span aria-hidden="true">↗</span></button></h3><p>Helping coordinators, trainers, and schools see what happens next—and work together.</p></div><button class="project-arrow" type="button" data-project="cordo" aria-label="Read the Cordo project story">↗</button></div>
+          <div class="project-info"><div><p class="project-type">Für Workshopteams</p><h3><button type="button" data-project="cordo">Cordo <span aria-hidden="true">↗</span></button></h3><p>Damit Koordination, Trainer:innen und Schulen wissen, was als Nächstes ansteht – und gut zusammenarbeiten.</p></div><button class="project-arrow" type="button" data-project="cordo" aria-label="Mehr über Cordo erfahren">↗</button></div>
         </article>
 
         <article id="buntaz" class="project project-buntaz reveal" data-category="tools">
-          <button class="project-visual buntaz-visual" type="button" data-project="buntaz" aria-label="Explore buntaž spreadsheet automation">
-            <span class="visual-topline"><span>MAKE THE REPETITIVE PART DISAPPEAR.</span><span>03</span></span>
+          <button class="project-visual buntaz-visual" type="button" data-project="buntaz" aria-label="buntaž Tabellenautomatisierung entdecken">
+            <span class="visual-topline"><span>DIE ROUTINEARBEIT ERLEDIGT SICH.</span><span>03</span></span>
             <span class="buntaz-word">buntaž<span>✳</span></span>
             <span class="spreadsheet" aria-hidden="true"><span class="sheet-toolbar"><i></i><b>Workshopkoordination</b><span>↗</span></span><span class="table-grid"><span></span><span>A</span><span>B</span><span>C</span><span>1</span><strong>Workshop</strong><strong>Team</strong><strong>Status</strong><span>2</span><span>Berufsorientierung</span><span>✓</span><em>Bestätigt</em><span>3</span><span>Gemeinsam stark</span><span>✓</span><em>Bestätigt</em><span>4</span><span>Neue Perspektiven</span><span>✓</span><em>Bestätigt</em><span>5</span><span></span><span></span><span></span></span></span>
-            <span class="automation-badge"><span>✓</span> That part? Already done.</span>
+            <span class="automation-badge"><span>✓</span> Schon erledigt.</span>
           </button>
-          <div class="project-info"><div><p class="project-type">For the people keeping things organised</p><h3><button type="button" data-project="buntaz">buntaž automation <span aria-hidden="true">↗</span></button></h3><p>Taking repetitive admin out of workshop coordination, so the team can focus on its work.</p></div><button class="project-arrow" type="button" data-project="buntaz" aria-label="Read the buntaž automation project story">↗</button></div>
+          <div class="project-info"><div><p class="project-type">Für alle, die den Überblick behalten</p><h3><button type="button" data-project="buntaz">buntaž Automatisierung <span aria-hidden="true">↗</span></button></h3><p>Nimmt dem Team wiederkehrende Verwaltungsaufgaben ab, damit mehr Zeit für die eigentliche Arbeit bleibt.</p></div><button class="project-arrow" type="button" data-project="buntaz" aria-label="Mehr über die buntaž Automatisierung erfahren">↗</button></div>
         </article>
 
         <article id="bounce" class="project project-bounce reveal" data-category="sound">
           <div class="project-visual bounce-visual">
             <div class="visual-topline"><span>RAHU / AUDIO INSTRUMENTS</span><span>04</span></div>
             <span class="bounce-outline" aria-hidden="true">bounce.</span>
-            <img class="bounce-image" src="/assets/rahu-bounce.png" alt="Rahu Bounce synthesizer interface with envelope editor, seven sound controls, and a keyboard" width="1160" height="590" loading="lazy">
-            <button type="button" class="audio-preview" id="audio-preview" aria-pressed="false"><span class="play-icon" aria-hidden="true">▶</span><span class="audio-label">A little bass?</span><span class="audio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+            <img class="bounce-image" src="/assets/rahu-bounce.png" alt="Rahu Bounce Synthesizer mit Hüllkurveneditor, sieben Klangreglern und einer Klaviatur" width="1160" height="590" loading="lazy">
+            <button type="button" class="audio-preview" id="audio-preview" aria-pressed="false"><span class="play-icon" aria-hidden="true">▶</span><span class="audio-label">Ein bisschen Bass?</span><span class="audio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
           </div>
-          <div class="project-info"><div><p class="project-type">For music makers</p><h3><button type="button" data-project="bounce">Rahu Bounce <span aria-hidden="true">↗</span></button></h3><p>An instrument for finding a bassline that feels right. A personal project in music and play.</p></div><button class="project-arrow" type="button" data-project="bounce" aria-label="Read the Rahu Bounce project story">↗</button></div>
+          <div class="project-info"><div><p class="project-type">Für Musikschaffende</p><h3><button type="button" data-project="bounce">Rahu Bounce <span aria-hidden="true">↗</span></button></h3><p>Ein Instrument für Basslines, die sich richtig anfühlen. Ein persönliches Projekt zwischen Musik und Spiel.</p></div><button class="project-arrow" type="button" data-project="bounce" aria-label="Mehr über Rahu Bounce erfahren">↗</button></div>
         </article>
 
 
         <article class="project project-game reveal" data-category="play">
-          <div class="game-preview"><div class="game-copy"><p class="eyebrow">A small distraction</p><h3>Hochstapler<span>_</span></h3><p>A little game hiding inside rosa. Play it right here: line up the moving block and see how high you can go.</p><button class="game-launch" type="button" id="game-launch">Play Hochstapler <span aria-hidden="true">↗</span></button><button class="game-story" type="button" data-project="hochstapler">The story behind the game ↗</button></div><div class="inline-game" id="hochstapler" aria-label="Play Hochstapler"><div class="game-stats"><span>HEIGHT <b id="game-height">0 m</b></span><span>SCORE <b id="game-score">0</b></span><span>BEST <b id="game-best">0</b></span></div><canvas id="stack-canvas" width="560" height="420" tabindex="0" aria-label="Hochstapler stacking game. Space or Enter places the moving block. P pauses. R restarts."></canvas><p id="game-status" aria-live="polite">Line it up. Find your rhythm.</p><div class="game-controls"><button type="button" id="stack-button" class="game-launch">Play now <span aria-hidden="true">↗</span></button><button type="button" id="game-pause" class="game-secondary" disabled>Pause</button><button type="button" id="game-restart" class="game-secondary">Restart</button></div><p class="game-instruction">CLICK, TAP, OR SPACE TO STACK · P TO PAUSE · R TO RESTART</p></div></div>
+          <div class="game-preview"><div class="game-copy"><p class="eyebrow">Eine kleine Ablenkung</p><h3>Hochstapler<span>_</span></h3><p>Ein kleines Spiel, das sich in rosa versteckt. Hier kannst du es direkt spielen: Setz die bewegten Blöcke aufeinander und schau, wie hoch du kommst.</p><button class="game-launch" type="button" id="game-launch">Hochstapler spielen <span aria-hidden="true">↗</span></button><button class="game-story" type="button" data-project="hochstapler">Die Geschichte hinter dem Spiel ↗</button></div><div class="inline-game" id="hochstapler" aria-label="Hochstapler spielen"><div class="game-stats"><span>HÖHE <b id="game-height">0 m</b></span><span>PUNKTE <b id="game-score">0</b></span><span>REKORD <b id="game-best">0</b></span></div><canvas id="stack-canvas" width="560" height="420" tabindex="0" aria-label="Hochstapler: Mit Leertaste oder Enter den Block setzen. P pausiert. R startet neu."></canvas><p id="game-status" aria-live="polite">Gut ausrichten. Den Rhythmus finden.</p><div class="game-controls"><button type="button" id="stack-button" class="game-launch">Jetzt spielen <span aria-hidden="true">↗</span></button><button type="button" id="game-pause" class="game-secondary" disabled>Pause</button><button type="button" id="game-restart" class="game-secondary">Neustart</button></div><p class="game-instruction">KLICKEN, TIPPEN ODER LEERTASTE ZUM STAPELN · P FÜR PAUSE · R FÜR NEUSTART</p></div></div>
         </article>
       </div>
 
-      <div class="lab reveal"><div><p class="eyebrow">A few more experiments</p><h3>Still tinkering.</h3></div><div class="lab-links"><button type="button" data-project="headturner"><span>Headturner Hat<small>A noise-first techno hi-hat instrument</small></span><span aria-hidden="true">↗</span></button><button type="button" data-project="nomads"><span>Valley Nomads<small>Multiplayer board game in the browser</small></span><span aria-hidden="true">↗</span></button></div></div>
+      <div class="lab reveal"><div><p class="eyebrow">Noch ein paar Experimente</p><h3>Ich tüftle weiter.</h3></div><div class="lab-links"><button type="button" data-project="headturner"><span>Headturner Hat<small>Ein Techno-Hi-Hat-Instrument auf Rauschbasis</small></span><span aria-hidden="true">↗</span></button><button type="button" data-project="nomads"><span>Valley Nomads<small>Mehrspieler-Brettspiel im Browser</small></span><span aria-hidden="true">↗</span></button></div></div>
     </section>
 
-<section id="contact" class="portfolio-contact wrap" aria-labelledby="portfolio-contact-title"><div><p class="eyebrow">Have something in mind?</p><h2 id="portfolio-contact-title">Let’s talk about it.</h2></div><div><p>If you’re looking for help with AI or custom software, here’s how we can work together.</p><a class="text-link" href="/#working-together">See what I can help with <span aria-hidden="true">↗</span></a></div></section>
+<section id="contact" class="portfolio-contact wrap" aria-labelledby="portfolio-contact-title"><div><p class="eyebrow">Schon eine Idee?</p><h2 id="portfolio-contact-title">Reden wir darüber.</h2></div><div><p>Wenn ihr Unterstützung mit KI oder eigener Software sucht: Hier erfahrt ihr, wie wir zusammenarbeiten können.</p><a class="text-link" href="/#working-together">Mein Angebot ansehen <span aria-hidden="true">↗</span></a></div></section>
   </main>
 
-  <footer class="footer wrap"><a class="wordmark" href="/">raphih.at<span class="logo-star" aria-hidden="true">✳</span></a><span>Raphael Huber</span><div><a href="/">Working together ↗</a><a href="https://github.com/rapfl" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" id="motion-toggle" aria-pressed="false">Pause motion</button><a href="#">Back to top ↑</a></div></footer>
+  <footer class="footer wrap"><a class="wordmark" href="/">raphih.at<span class="logo-star" aria-hidden="true">✳</span></a><span>Raphael Huber</span><div><a href="/">Zusammenarbeiten ↗</a><a href="https://github.com/rapfl" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" id="motion-toggle" aria-pressed="false">Animationen pausieren</button><a href="#">Nach oben ↑</a></div></footer>
 
   <audio id="bounce-audio" src="/assets/rahu-bounce-demo.mp3" preload="none"></audio>
-  <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" aria-label="Close project">×</button><div id="project-dialog-content"></div></dialog>
+  <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" aria-label="Projekt schließen">×</button><div id="project-dialog-content"></div></dialog>
 
 </body>
 </html>

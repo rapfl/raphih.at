@@ -2,7 +2,7 @@
 // Preserve links shared before the portfolio moved to its own page.
 const portfolioAnchors = new Set(['work', 'hochstapler', 'rosa', 'cordo', 'buntaz', 'bounce']);
 function followPortfolioAnchor() {
-  if (portfolioAnchors.has(location.hash.slice(1))) location.replace('/portfolio/' + location.hash);
+  if (portfolioAnchors.has(location.hash.slice(1))) location.replace((document.documentElement.lang === 'en' ? '/en/portfolio/' : '/portfolio/') + location.hash);
 }
 followPortfolioAnchor();
 window.addEventListener('hashchange', followPortfolioAnchor);
@@ -13,7 +13,7 @@ function reflectMotion() {
   document.body.classList.toggle('motion-paused', paused);
   document.documentElement.style.scrollBehavior = paused ? 'auto' : '';
   motionButton.setAttribute('aria-pressed', String(paused));
-  motionButton.textContent = paused ? 'Play motion' : 'Pause motion';
+  motionButton.textContent = document.documentElement.lang === 'de' ? (paused ? 'Animationen abspielen' : 'Animationen pausieren') : (paused ? 'Play motion' : 'Pause motion');
 }
 reflectMotion();
 motionButton.addEventListener('click', () => { paused = !paused; reflectMotion(); });
