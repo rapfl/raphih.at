@@ -19,3 +19,7 @@ Tone: the same warm, playful character, now centred on conversation and shared l
 Differentiation: a small group of friendly illustrated people replaces the hardware dial. The curiosity control stays a secondary invitation to play.
 Content order: people-first introduction → working together → meet Raphael → examples (education and coordination first) → collaborative process → conversation. Sound and code remain evidence and creative interests, rather than the main identity.
 Constraints: preserve the existing projects and game, keyboard accessibility, reduced motion, and static hosting. Do not imply unverified client outcomes.
+
+## Illustration removal — 28 October 2026
+
+User feedback: keep the people-first structure, remove the character illustration. Hero now uses typography, whitespace, and a small invitation to talk. Removed the faces, associated curiosity slider and effects, and the decorative about-section smiley. Preserve the existing section order, projects, and game.

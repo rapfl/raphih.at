@@ -25,28 +25,6 @@ if ('IntersectionObserver' in window) {
   document.documentElement.classList.add('js-reveal');
 }
 
-let confettiReady = true;
-$('#curiosity').addEventListener('input', event => {
-  const value = Number(event.target.value);
-  document.documentElement.style.setProperty('--play', value);
-  $('.happy-block').style.transform = `rotate(${(value - 50) * 0.3}deg) translateY(${-(value - 50) * 0.13}px)`;
-  if (value < 85) confettiReady = true;
-  if (value > 94 && confettiReady && !motionPaused) {
-    confettiReady = false;
-    for (let index = 0; index < 32; index++) {
-      const piece = document.createElement('i');
-      piece.className = 'confetti-piece';
-      piece.setAttribute('aria-hidden', 'true');
-      piece.style.setProperty('--x', `${Math.random() * 100}vw`);
-      piece.style.setProperty('--c', ['#294ce8', '#f28161', '#b2c77d', '#e9c083'][index % 4]);
-      piece.style.setProperty('--delay', `${Math.random() * 0.4}s`);
-      document.body.append(piece);
-      piece.addEventListener('animationend', () => piece.remove(), { once: true });
-      setTimeout(() => piece.remove(), 2500);
-    }
-  }
-});
-
 $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
   const filter = button.dataset.filter;
   $$('[data-filter]').forEach(item => {
