@@ -23,3 +23,11 @@ Constraints: preserve the existing projects and game, keyboard accessibility, re
 ## Illustration removal — 28 October 2026
 
 User feedback: keep the people-first structure, remove the character illustration. Hero now uses typography, whitespace, and a small invitation to talk. Removed the faces, associated curiosity slider and effects, and the decorative about-section smiley. Preserve the existing section order, projects, and game.
+
+## Separate offering and portfolio — 28 October 2026
+
+Confirmed offer: hands-on implementation of AI or AI-driven software, custom builds, and ongoing support. Audience: small organisations and institutions, whether catching up or getting ahead. Strategy, team management, and facilitation are supporting capabilities, not separate lead offers.
+
+Homepage purpose: make the engagement clear and invite a useful first conversation. Visual direction: restrained typography, warm paper, cobalt emphasis, and generous spacing; no character illustration. Promise: “Let’s put it to work.” Content: three practical offers → “Listen closely. Try together. Keep learning.” → a few linked examples → personal involvement → contact. No invented packages, prices, turnaround times, or client results.
+
+Portfolio: preserved all five projects, the two experiments, audio, case studies, and playable game at `/portfolio/`. Portfolio links to the homepage; homepage links to project anchors. Legacy homepage project/game hashes forward to the portfolio. Separate scripts prevent portfolio-only controls from running on the landing page. Both pages remain buildless, keyboard accessible, and responsive, with reduced-motion support.

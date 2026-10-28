@@ -2,11 +2,13 @@
   "name": "raphih-at",
   "version": "1.0.0",
   "private": true,
-  "description": "Raphael Huber’s playful portfolio. Buildless, self-contained static website.",
+  "description": "Raphael Huber: AI implementation, custom software, support, and a dedicated portfolio.",
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
-    "check": "node --check dist/app.js && node scripts/check.mjs"
+    "check": "node --check dist/app.js && node --check dist/landing.js && node scripts/check.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

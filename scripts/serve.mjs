@@ -7,8 +7,12 @@ const port = Number(process.env.PORT || 4173);
 http.createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-    const path = resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+    let path = resolve(root, '.' + pathname);
     if (path !== root && !path.startsWith(root + sep)) {response.writeHead(403);response.end();return;}
+    if ((await stat(path)).isDirectory()) {
+      if (!pathname.endsWith('/')) { response.writeHead(301, { Location: pathname + '/' }); response.end(); return; }
+      path = resolve(path, 'index.html');
+    }
     if (!(await stat(path)).isFile()) throw new Error('not a file');
     const data = await readFile(path);
     response.writeHead(200, { 'Content-Type': types[extname(path)] || 'application/octet-stream', 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' });
